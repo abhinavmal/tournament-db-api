@@ -22,3 +22,8 @@ A DB-API using PostgreSQL to implement a Swiss tournament system.
 8. After one match, players with one win are paired.
 Success!  All tests pass!
 ```
+
+## Limitations
+- The database schema has provision for a tie in a match but the API does not currently implement it.
+- This system will currently only work for a single tournament and needs to be updated to handle multiple
+tournaments.
