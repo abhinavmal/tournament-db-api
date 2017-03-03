@@ -8,6 +8,13 @@ A DB-API using PostgreSQL to implement a Swiss tournament system.
 - [PostgreSQL](https://www.postgresql.org/)
 
 ## Testing the Tournament DB-API system
+- The implementation assumes that a database with the name `tournament` has been already created, and the user
+is connected to it. So run the following commands in the `psql` prompt (type `psql` on command line and it should take you to the >psql prompt) if that is not the case, to create and connect to the database:
+    ```
+    CREATE DATABASE tournament;
+    \c tournament
+    ```
+
 - Run `git clone git@github.com:abhinavmal/tournament-db-api.git` on the command line and
 `cd tournament-db-api` which contains `tournament_test.py`.
 - Run `python tournament_test.py` and you should see the following result if everything goes well:

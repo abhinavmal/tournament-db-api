@@ -9,14 +9,14 @@ import bleach
 
 def connect():
     """Connect to the PostgreSQL database.  Returns a database connection."""
-    return psycopg2.connect("dbname=tournament")
+    return psycopg2.connect("dbname=tournament user=vagrant")
 
 
 def deleteMatches():
     """Remove all the match records from the database."""
     conn = connect()
     cur = conn.cursor()
-    cur.execute(""" delete from matches """)
+    cur.execute(""" delete from matches ;""")
     conn.commit()
     conn.close()
 
@@ -25,7 +25,7 @@ def deletePlayers():
     """Remove all the player records from the database."""
     conn = connect()
     cur = conn.cursor()
-    cur.execute(""" delete from players """)
+    cur.execute(""" delete from players ;""")
     conn.commit()
     conn.close()
 
@@ -34,7 +34,7 @@ def countPlayers():
     """Returns the number of players currently registered."""
     conn = connect()
     cur = conn.cursor()
-    cur.execute(""" select count(*) as num from players """)
+    cur.execute(""" select count(*) as num from players ;""")
     players = cur.fetchone()
     conn.close()
     return int(players[0])
@@ -52,7 +52,7 @@ def registerPlayer(name):
     conn = connect()
     cur = conn.cursor()
     clean_name = bleach.clean(name)
-    sql = """ insert into players values (default, %s) """
+    sql = """ insert into players values (default, %s) ;"""
     params = (clean_name,)
     cur.execute(sql, params)
     conn.commit()
@@ -96,7 +96,7 @@ def reportMatch(winner, loser):
     cur = conn.cursor()
     clean_winner = bleach.clean(winner)
     clean_loser = bleach.clean(loser)
-    sql = """ insert into matches values (default, %s, %s) """
+    sql = """ insert into matches values (default, %s, %s) ;"""
     params = (clean_winner, clean_loser)
     cur.execute(sql, params)
     conn.commit()
