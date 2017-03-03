@@ -19,7 +19,7 @@ is connected to it. So run the following commands in the `psql` prompt (type `ps
     \c tournament
     ``` -->
 
-- By default, the owner of the database is 'vagrant' and this is also specified explicitly in the `tournament.sql` file at line 15: `ALTER DATABASE tournament OWNER TO vagrant;`, and in `tournament.py` at line 12: `psycopg2.connect("dbname=tournament user=vagrant")` while connecting to the database. You can run this as the `vagrant` user by running a Vagrant VM on your system using the provided `Vagrantfile` and setup-config file `pg_config.sh` (requires installation of Vagrant and VirtualBox) and running `vagrant up` and then, `vagrant ssh` from the directory that contains the `Vagrantfile`, OR
+- By default, the owner of the database is 'vagrant' and this is also specified explicitly in the `tournament.sql` file at line 15: `ALTER DATABASE tournament OWNER TO vagrant;`, and in `tournament.py` at line 12: `psycopg2.connect("dbname=tournament user=vagrant")` while connecting to the database. You can run this as the `vagrant` user by running a Vagrant VM on your system using the provided `Vagrantfile` and setup-config file `pg_config.sh` (requires installation of Vagrant and VirtualBox and running `vagrant up` and then, `vagrant ssh` from the directory that contains the `Vagrantfile`), OR
 
 - You can configure your own installation of PostgreSQL by referring to the `pg_config.sh` file at the lines 13 to 16. See example changes below:
 ```
