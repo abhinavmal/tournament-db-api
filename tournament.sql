@@ -12,6 +12,8 @@ drop database if exists tournament;
 
 create database tournament;
 
+ALTER DATABASE tournament OWNER TO vagrant;
+
 \c tournament;
 
 -- create database tournament;
