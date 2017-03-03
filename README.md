@@ -9,7 +9,7 @@ A DB-API using PostgreSQL to implement a Swiss tournament system.
 
 ## Testing the Tournament DB-API system
 - The implementation assumes that a database with the name `tournament` has been already created, and the user
-is connected to it. So run the following commands in the `psql` prompt (type `psql` on command line and it should take you to the >psql prompt) if that is not the case, to create and connect to the database:
+is connected to it. So run the following commands in the `psql` prompt (type `psql` on command line and it should take you to the `>psql prompt`) if that is not the case, to create and connect to the database:
     ```
     CREATE DATABASE tournament;
     \c tournament
